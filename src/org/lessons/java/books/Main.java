@@ -1,5 +1,9 @@
 package org.lessons.java.books;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -52,13 +56,68 @@ public class Main {
 				bookArray[index] = b;
 				index++;
 				
-			} catch (Exception e) {
+			} 
+			catch (TitleException e) {
+				System.out.println("title error:"+e.getMessage());
+			}
+			catch (Exception e) {
 				System.out.println("error: "+ e.getMessage());
 			}
 			
 		}
 		
+		in.close();
+		
 		System.out.println(Arrays.asList(bookArray));
+		
+//		FILE 
+		
+		 File file = new File("test.txt");
+		 
+//		 WRITE
+		 
+//		 FileWriter writer = null;
+//		 try {
+//			 writer = new FileWriter(file);
+//			
+////			writer.write("testtestets");
+//			for(int x=0; x<bookNumber; x++) {
+//				writer.write(bookArray[x] + "\n");
+//			}
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			System.out.println(e.getMessage());
+//		}
+//		 finally {
+//			 if (writer != null)
+//					try {
+//						writer.close();
+//					} catch (IOException e) { }
+//			 System.out.println("print should be done");
+//		 }
+//		 
+////		 READ IN CONSOLE
+//		 
+//		 Scanner reader = null;
+//			try {
+//				
+//				reader = new Scanner(file);
+//				
+//				while (reader.hasNextLine()) {
+//				   String data = reader.nextLine();
+//				   
+//				   
+//					   System.out.println(data);
+//				}
+//			} 
+//			catch (FileNotFoundException e) {
+//				
+//				System.out.println("Error reading file: " + e.getMessage());
+//			} finally {
+//				
+//				if (reader != null)
+//					reader.close();
+//			}
 		
 	}
 }

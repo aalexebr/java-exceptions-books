@@ -20,7 +20,7 @@ public class Book {
 
 	public void setTitle(String title) throws TitleException{
 		if(title == null || title.isEmpty() || title.length() < 1) {
-			throw new TitleException("Title must be longer than 1 character");
+			throw new TitleException("Title must be at least 1 character");
 		}
 		this.title = title;
 	}
@@ -44,6 +44,24 @@ public class Book {
 		if(author == null || author.isEmpty() || author.length() < 3) {
 			throw new Exception("author must be longer than 3 character");
 		}
+		boolean flag = false;
+		for(int x=0;x<author.length();x++) {
+			char c = author.charAt(x);
+			int n = Integer.valueOf(c);
+			if( (n<=122) && (n>= 97) ) {
+				flag = true;
+			}
+			else if ((n<=90) && (n>= 65)) {
+				flag = true;	
+			}
+			else {
+				flag = false;
+			}
+		}
+		if(!flag) {
+			throw new Exception("author must only contain characters");
+		}
+		
 		this.author = author;
 	}
 
