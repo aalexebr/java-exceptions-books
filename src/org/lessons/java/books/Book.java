@@ -19,7 +19,7 @@ public class Book {
 	}
 
 	public void setTitle(String title) throws TitleException{
-		if(title == null || title.isEmpty() || title.length() < 1) {
+		if(title == null || title.isBlank() || title.length() < 1) {
 			throw new TitleException("Title must be at least 1 character");
 		}
 		this.title = title;
@@ -41,9 +41,10 @@ public class Book {
 	}
 
 	public void setAuthor(String author) throws Exception{
-		if(author == null || author.isEmpty() || author.length() < 3) {
+		if(author == null || author.isBlank() || author.length() < 3) {
 			throw new Exception("author must be longer than 3 character");
 		}
+
 		boolean flag = false;
 		for(int x=0;x<author.length();x++) {
 			char c = author.charAt(x);
@@ -70,7 +71,7 @@ public class Book {
 	}
 
 	public void setPublisher(String publisher) throws Exception{
-		if(publisher == null || publisher.isEmpty() || publisher.length() < 3) {
+		if(publisher == null || publisher.isBlank() || publisher.length() < 3) {
 			throw new Exception("Publisher must be longer than 3 character");
 		}
 		this.publisher = publisher;
@@ -80,7 +81,7 @@ public class Book {
 	public String toString() {
 		// TODO Auto-generated method stub
 		return "\n"
-		+"BOOK:"
+		+"BOOK:\n"
 		+ "title: " + getTitle() + "\n"
 		+ "page number: " + getPageNumber()+ "\n"
 		+ "author: " + getAuthor()+ "\n"
