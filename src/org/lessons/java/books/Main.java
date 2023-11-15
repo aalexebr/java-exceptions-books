@@ -72,52 +72,52 @@ public class Main {
 		
 //		FILE 
 		
-		 File file = new File("test.txt");
+		 File file = new File("books.txt");
 		 
 //		 WRITE
 		 
-//		 FileWriter writer = null;
-//		 try {
-//			 writer = new FileWriter(file);
-//			
-////			writer.write("testtestets");
-//			for(int x=0; x<bookNumber; x++) {
-//				writer.write(bookArray[x] + "\n");
-//			}
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			System.out.println(e.getMessage());
-//		}
-//		 finally {
-//			 if (writer != null)
-//					try {
-//						writer.close();
-//					} catch (IOException e) { }
-//			 System.out.println("print should be done");
-//		 }
-//		 
-////		 READ IN CONSOLE
-//		 
-//		 Scanner reader = null;
-//			try {
-//				
-//				reader = new Scanner(file);
-//				
-//				while (reader.hasNextLine()) {
-//				   String data = reader.nextLine();
-//				   
-//				   
-//					   System.out.println(data);
-//				}
-//			} 
-//			catch (FileNotFoundException e) {
-//				
-//				System.out.println("Error reading file: " + e.getMessage());
-//			} finally {
-//				
-//				if (reader != null)
-//					reader.close();
-//			}
+		 FileWriter writer = null;
+		 try {
+			 writer = new FileWriter(file);
+			
+//			writer.write("testtestets");
+			for(int x=0; x<bookNumber; x++) {
+				writer.write(bookArray[x] + "\n");
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
+		}
+		 finally {
+			 if (writer != null)
+					try {
+						writer.close();
+					} catch (IOException e) { }
+			 System.out.println("print should be done");
+		 }
+		 
+//		 READ IN CONSOLE
+		 
+		 Scanner reader = null;
+			try {
+				
+				reader = new Scanner(file);
+				
+				while (reader.hasNextLine()) {
+				   String data = reader.nextLine();
+				   
+				   
+					   System.out.println(data);
+				}
+			} 
+			catch (FileNotFoundException e) {
+				
+				System.out.println("Error reading file: " + e.getMessage());
+			} finally {
+				
+				if (reader != null)
+					reader.close();
+			}
 		
 	}
 }
